@@ -1,4 +1,6 @@
-package com.tomasdonati.desafiotecnicofluxit.model;
+package com.tomasdonati.desafiotecnicofluxit.model.dao;
+
+import com.tomasdonati.desafiotecnicofluxit.model.service.UserService;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

@@ -1,4 +1,4 @@
-package com.tomasdonati.desafiotecnicofluxit.model;
+package com.tomasdonati.desafiotecnicofluxit.model.pojo;
 
 import com.google.gson.annotations.SerializedName;
 

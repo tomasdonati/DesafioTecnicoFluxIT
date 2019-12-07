@@ -1,5 +1,7 @@
-package com.tomasdonati.desafiotecnicofluxit.model;
+package com.tomasdonati.desafiotecnicofluxit.model.dao;
 
+import com.tomasdonati.desafiotecnicofluxit.model.pojo.User;
+import com.tomasdonati.desafiotecnicofluxit.model.pojo.UserContainer;
 import com.tomasdonati.desafiotecnicofluxit.utils.ResultListener;
 
 import java.util.List;
@@ -16,8 +18,8 @@ public class UserDao extends RetrofitParentDao {
         super(BASE_URL);
     }
 
-    public void bringUsers(String query, final ResultListener<List<User>> controllerListener){
-        Call<UserContainer> call = userService.bringUsers(query);
+    public void bringUsers( final ResultListener<List<User>> controllerListener){
+        Call<UserContainer> call = userService.bringUsers();
 
         call.enqueue(new Callback<UserContainer>() {
             @Override
