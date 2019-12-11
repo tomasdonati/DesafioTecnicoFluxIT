@@ -1,5 +1,7 @@
 package com.tomasdonati.desafiotecnicofluxit.model.dao;
 
+import android.util.Log;
+
 import com.tomasdonati.desafiotecnicofluxit.model.pojo.User;
 import com.tomasdonati.desafiotecnicofluxit.model.pojo.UserContainer;
 import com.tomasdonati.desafiotecnicofluxit.utils.ResultListener;
@@ -30,7 +32,7 @@ public class UserDao extends RetrofitParentDao {
 
             @Override
             public void onFailure(Call<UserContainer> call, Throwable t) {
-
+                Log.d("ddd","dd");
             }
         });
     }

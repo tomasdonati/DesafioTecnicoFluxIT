@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
@@ -18,7 +19,9 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.tomasdonati.desafiotecnicofluxit.R;
+import com.tomasdonati.desafiotecnicofluxit.controller.UserController;
 import com.tomasdonati.desafiotecnicofluxit.model.pojo.User;
+import com.tomasdonati.desafiotecnicofluxit.utils.ResultListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +69,6 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserLi
             userUsername = itemView.findViewById(R.id.userListCell_TextView_userUsername);
             userThumbnail = itemView.findViewById(R.id.userListCell_imageView_userThumbnail);
             thumbnailProgressBar = itemView.findViewById(R.id.userListCell_progressBar);
-
         }
 
         public void bindUser(User user){

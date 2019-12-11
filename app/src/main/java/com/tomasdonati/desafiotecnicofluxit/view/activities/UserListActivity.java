@@ -3,6 +3,7 @@ package com.tomasdonati.desafiotecnicofluxit.view.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 
@@ -20,6 +21,7 @@ public class UserListActivity extends AppCompatActivity {
     private RecyclerView userListRecycler;
     private UserListAdapter userListAdapter;
     private UserController userController;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
 
     @Override
@@ -39,6 +41,14 @@ public class UserListActivity extends AppCompatActivity {
         userListRecycler.setLayoutManager(linearLayoutManager);
         userListRecycler.setAdapter(userListAdapter);
 
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                requestUser();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
     }
 
     private void requestUser() {
@@ -52,5 +62,6 @@ public class UserListActivity extends AppCompatActivity {
 
     public void viewFinder(){
         userListRecycler = findViewById(R.id.userListActivity_recyclerView_productList);
+        swipeRefreshLayout = findViewById(R.id.userListActivity_swipeRefreshLayout);
     }
 }

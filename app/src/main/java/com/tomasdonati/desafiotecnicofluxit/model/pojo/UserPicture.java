@@ -4,8 +4,11 @@ import com.google.gson.annotations.SerializedName;
 
 public class UserPicture {
 
+    @SerializedName("large")
    private String userLargePicture;
+    @SerializedName("medium")
    private String userMediumPicture;
+    @SerializedName("thumbnail")
    private String userThumbnailPicture;
 
     public String getUserLargePicture() {

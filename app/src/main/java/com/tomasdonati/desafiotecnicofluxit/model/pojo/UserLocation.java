@@ -4,15 +4,14 @@ import com.google.gson.annotations.SerializedName;
 
 public class UserLocation {
 
-   private String userStreet;
+    @SerializedName("city")
    private String userCity;
+    @SerializedName("state")
    private String userState;
+    @SerializedName("postcode")
    private String userPostcode;
+    @SerializedName("coordinates")
    private UserCoordinates userCoordinates;
-
-    public String getUserStreet() {
-        return userStreet;
-    }
 
     public String getUserCity() {
         return userCity;

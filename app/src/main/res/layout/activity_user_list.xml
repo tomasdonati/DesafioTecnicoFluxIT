@@ -6,9 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".view.activities.UserListActivity"
     android:orientation="vertical"
-    android:background="#1f1f1f">
+    android:background="#FFFF">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/userListActivity_swipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
