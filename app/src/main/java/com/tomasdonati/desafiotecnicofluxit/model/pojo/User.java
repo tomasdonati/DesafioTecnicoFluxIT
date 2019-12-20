@@ -2,8 +2,9 @@ package com.tomasdonati.desafiotecnicofluxit.model.pojo;
 
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+import java.io.Serializable;
 
+public class User implements Serializable {
 
     @SerializedName("name")
     private UserFullName userFullName;
@@ -13,13 +14,15 @@ public class User {
     private UserLogin userLogin;
     @SerializedName("picture")
     private UserPicture userPicture;
-    @SerializedName("gender")
-    private String userGender;
     @SerializedName("email")
     private String userEmail;
     @SerializedName("cell")
     private String userPhoneNumber;
+    @SerializedName("dob")
+    private UserDOB userDOB;
 
+    public User() {
+    }
 
     public UserFullName getUserFullName() {
         return userFullName;
@@ -37,15 +40,15 @@ public class User {
         return userPicture;
     }
 
-    public String getUserGender() {
-        return userGender;
-    }
-
     public String getUserEmail() {
         return userEmail;
     }
 
     public String getUserPhoneNumber() {
         return userPhoneNumber;
+    }
+
+    public UserDOB getUserDOB() {
+        return userDOB;
     }
 }

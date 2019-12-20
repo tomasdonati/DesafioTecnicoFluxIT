@@ -2,7 +2,9 @@ package com.tomasdonati.desafiotecnicofluxit.model.pojo;
 
 import com.google.gson.annotations.SerializedName;
 
-public class UserCoordinates {
+import java.io.Serializable;
+
+public class UserCoordinates implements Serializable {
 
     @SerializedName("latitude")
    private String userLatitude;

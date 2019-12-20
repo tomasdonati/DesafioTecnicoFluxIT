@@ -1,6 +1,9 @@
 package com.tomasdonati.desafiotecnicofluxit.view.adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,16 +25,25 @@ import com.tomasdonati.desafiotecnicofluxit.R;
 import com.tomasdonati.desafiotecnicofluxit.controller.UserController;
 import com.tomasdonati.desafiotecnicofluxit.model.pojo.User;
 import com.tomasdonati.desafiotecnicofluxit.utils.ResultListener;
+import com.tomasdonati.desafiotecnicofluxit.view.activities.UserDetailActivity;
+import com.tomasdonati.desafiotecnicofluxit.view.activities.UserListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserListViewHolder> {
 
     private List<User> userList;
+    private UserListAdapterListener adapterListener;
 
     public UserListAdapter(List<User> userList){
         this.userList = userList;
+    }
+
+    public UserListAdapter(List<User> userList, UserListAdapterListener adapterListener) {
+        this.userList = userList;
+        this.adapterListener = adapterListener;
     }
 
     @NonNull
@@ -69,6 +81,14 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserLi
             userUsername = itemView.findViewById(R.id.userListCell_TextView_userUsername);
             userThumbnail = itemView.findViewById(R.id.userListCell_imageView_userThumbnail);
             thumbnailProgressBar = itemView.findViewById(R.id.userListCell_progressBar);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    User clickedUser = userList.get(getAdapterPosition());
+                    adapterListener.listenToUser(clickedUser);
+                }
+            });
         }
 
         public void bindUser(User user){
@@ -97,6 +117,10 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserLi
     public void setUserList(List<User> userList){
         this.userList = userList;
         notifyDataSetChanged();
+    }
+
+    public interface UserListAdapterListener{
+        public void listenToUser(User user);
     }
 
 

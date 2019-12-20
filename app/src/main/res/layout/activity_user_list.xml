@@ -4,22 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activities.UserListActivity"
-    android:orientation="vertical"
-    android:background="#FFFF">
+    android:background="#FFFF"
+    tools:context=".view.activities.UserListActivity">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/userListActivity_swipeRefreshLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/userListActivity_swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/userListActivity_recyclerView_productList"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/userListActivity_recyclerView_productList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </FrameLayout>

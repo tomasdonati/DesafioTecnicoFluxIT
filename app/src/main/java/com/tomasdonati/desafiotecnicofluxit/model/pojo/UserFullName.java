@@ -2,7 +2,9 @@ package com.tomasdonati.desafiotecnicofluxit.model.pojo;
 
 import com.google.gson.annotations.SerializedName;
 
-public class UserFullName {
+import java.io.Serializable;
+
+public class UserFullName implements Serializable {
 
     @SerializedName("title")
     private String userTitle;
